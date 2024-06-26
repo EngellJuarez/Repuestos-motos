@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="fa-solid fa-motorcycle"></i>
+        <span class="logo_name">Repuestos Aleluya</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" id="dashboard-link" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="profile-link">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Perfil</span>
+          </a>
+        </li>
+        </li>
+        <li class="log_out">
+          <a href="index.html">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Cerrar sesión</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard"></span>
+        </div>
+      </nav>
+
+      <div class="home-content" id="content">
+        
+      </div>
+    </section>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+
+      function setActiveLink(link) {
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.remove('active');
+            });
+            link.classList.add('active');
+      }
+
+      document.getElementById('profile-link').addEventListener('click', function(e) {
+        e.preventDefault();
+            setActiveLink(this);
+            document.getElementById('content').innerHTML = `
+                <section class="seccion-perfil-usuario">
+                    <div class="perfil-usuario-header">
+                        <div class="perfil-usuario-portada">
+                            <div class="perfil-usuario-avatar">
+                                <button type="button" class="boton-avatar">
+                                    <i class="far fa-image"></i>
+                                </button>
+                            </div>
+                            <button type="button" class="boton-portada">
+                                <i class="far fa-image"></i> Cambiar fondo
+                            </button>
+                        </div>
+                    </div>
+                    <div class="perfil-usuario-body">
+                        <div class="perfil-usuario-bio">
+                            <h3 class="titulo">Maria Alejandra De la Cruz</h3>
+                            <p class="texto">Ingeniosa, con un sentido del humor agudo y una pasión por la resolución de problemas.</p>
+                        </div>
+                        <div class="perfil-usuario-footer">
+                            <ul class="lista-datos">
+                                <li><i class="icono fas fa-phone-alt"></i>+505 7618 0471</li>
+                                <li><i class="icono fas fa-user-check"></i>Registrado</li>
+                            </ul>
+                            <ul class="lista-datos">
+                                <li><i class="icono fas fa-map-marker-alt"></i>Zona N°8 Colegio Bella Cruz 4C Oeste. 1C Norte. 20VRS Este. Municipio de Ciudad Sandino</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            `;
+        });
+
+        document.getElementById('dashboard-link').addEventListener('click', function(e) {
+          e.preventDefault();
+            setActiveLink(this);
+            document.getElementById('content').innerHTML = `
+                <div class="dashboard-content">
+
+                  <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Pedidos totales</div>
+              <div class="number">876</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Desde ayer</span>
+              </div>
+            </div>
+            <i class="bx bx-cart-alt cart"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Ventas totales</div>
+              <div class="number">2,876</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Desde ayer</span>
+              </div>
+            </div>
+            <i class="bx bxs-cart-add cart two"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Ganancias</div>
+              <div class="number">$12,876</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Desde ayer</span>
+              </div>
+            </div>
+            <i class="bx bx-cart cart three"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">Devoluviones</div>
+              <div class="number">86</div>
+              <div class="indicator">
+                <i class="bx bx-down-arrow-alt down"></i>
+                <span class="text">Desde hoy</span>
+              </div>
+            </div>
+            <i class="bx bxs-cart-download cart four"></i>
+          </div>
+        </div>
+
+        <div class="sales-boxes">
+          <div class="recent-sales box">
+            <div class="title">Ventas Recientes</div>
+            <div class="sales-details">
+              <ul class="details">
+                <li class="topic">Fecha</li>
+                <li><a href="#">02 Jun 2024</a></li>
+                <li><a href="#">06 Jun 2024</a></li>
+                <li><a href="#">06 Jun 2024</a></li>
+                <li><a href="#">09 Jun 2024</a></li>
+                <li><a href="#">10 Jun 2024</a></li>
+                <li><a href="#">11 Jun 2024</a></li>
+                <li><a href="#">17 Jun 2024</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Clientes</li>
+                <li><a href="#">Alex Diaz</a></li>
+                <li><a href="#">David Martinez</a></li>
+                <li><a href="#">Diana Perez</a></li>
+                <li><a href="#">Martin Parrales</a></li>
+                <li><a href="#">Alex Sulva</a></li>
+                <li><a href="#">Alexa Castillo</a></li>
+                <li><a href="#">Tiana Lopez</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Ventas</li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Pendiente</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Pendiente</a></li>
+                <li><a href="#">Local</a></li>
+              </ul>
+              <ul class="details">
+                <li class="topic">Total</li>
+                <li><a href="#">C$204.98</a></li>
+                <li><a href="#">C$170.66</a></li>
+                <li><a href="#">C$156.56</a></li>
+                <li><a href="#">C$244.95</a></li>
+                <li><a href="#">C$267.33</a></li>
+                <li><a href="#">C$323.53</a></li>
+                <li><a href="#">C$546.52</a></li>
+              </ul>
+            </div>
+            <div class="button">
+              <a href="#">Ver todas</a>
+            </div>
+          </div>
+          <div class="top-sales box">
+            <div class="title">Productos más vendidos</div>
+            <ul class="top-sales-details">
+              <li>
+                <a href="#">
+                  <img src="img/LLANTA 4.00-8 NAYASA.jpg" alt="" />
+                  <span class="product">LLANTA 4.00-8 NAYASA</span>
+                </a>
+                <span class="price">C$107</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/ACEITE PUMA 20W50 4T.png" alt="" />
+                  <span class="product">ACEITE PUMA 20W50 4T</span>
+                </a>
+                <span class="price">C$567</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/ACEITE CASTROL 20W50 4T.png" alt="" />
+                  <span class="product">ACEITE CASTROL 20W50 4T</span>
+                </a>
+                <span class="price">C$234</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/Pedal de freno.jpg" alt="" />
+                  <span class="product">PEDAL DE FRENO</span>
+                </a>
+                <span class="price">C$312</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/LLANTAS 4.00-8 MRF.jpg" alt="" />
+                  <span class="product">LLANTAS 4.00-8 MRF</span>
+                </a>
+                <span class="price">C$456</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/BUSHING DE MULETA.jpg" alt="" />
+                  <span class="product">BUSHING DE MULETA</span>
+                </a>
+                <span class="price">C$245</span>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img src="img/SUSPENSION2.jpg" alt="" />
+                  <span class="product">SUSPENSION</span>
+                </a>
+                <span class="price">C$345</span>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="img/LIQUIDO DE FRENO ROJO.jpg" alt="" />
+                  <span class="product">LIQUIDO DE FRENO ROJO</span>
+                </a>
+                <span class="price">C$145</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+                </div>
+            `;
+        });
+
+        // Cargar el Dashboard por defecto al inicio
+        document.getElementById('dashboard-link').click();
+    </script>
+    <script
+    src="https://kit.fontawesome.com/81581fb069.js"
+    crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>REPUESTOS</title>
+		<link rel="stylesheet" href="styles2.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container-hero">
+				<div class="container hero">
+					
+					<div class="container-logo">
+						<i class="fa-solid fa-motorcycle"></i>
+						<h1 class="logo">
+						<a href="#">REPUESTOS ALELUYA</a></h1>
+					</div>
+
+					<div class="container-user">
+						<div class="user-icon">
+                            <i class="fa-solid fa-user"></i>
+                            <div class="dropdown-menu">
+                                <a href="dashboard.html">Dashboard</a>
+                                <a href="index.html">Cerrar Sesión</a>
+                            </div>
+                        </div>
+						<div class="content-shopping-cart">
+							<a href="Carrito2.html">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const userIcon = document.querySelector(".user-icon .fa-user");
+                    const dropdownMenu = document.querySelector(".dropdown-menu");
+                
+                    userIcon.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                    });
+                
+                    document.addEventListener("click", function() {
+                        dropdownMenu.style.display = 'none';
+                    });
+                });
+            </script>
+
+			<div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="index2.html">Inicio</a></li>
+						<li><a href="Lubricantes2.html">LUBRICANTES</a></li>
+						<li><a href="llantas2.html">LLANTAS</a></li>
+						<li><a href="Sis_Suspension2.html">SISTEMA SUSPENSION</a></li>
+						<li><a href="Sis_Freno2.html">SISTEMA FRENO</a></li>
+					</ul>
+
+					<div class="search-container">
+						<form class="search-form">
+							<input type="search" id="searchInput" placeholder="Buscar..." />
+							<button class="btn-search">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</button>
+						</form>
+						<div class="search-results" id="searchResults"></div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+        
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<a href="bushing-amortiguador-trasero.html">
+								<img src="img/BUSHING AMORTIGUADOR TRASERO.jpg" alt="BUSHING AMORTIGUADOR TRASERO" />
+							</a>
+							<span class="discount">-13%</span>
+							
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>
+								<a href="bushing-amortiguador-trasero.html">BUSHING AMORTIGUADOR TRASERO</a>
+							</h3>
+							<span class="add-cart" data-item-id="item10">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+						</div>
+					</div>
+
+                     <!-- Productos 2 -->
+                    <div class="card-product">
+						<div class="container-img">
+							<a href="cuna-de-ciguenal-volante.html">
+								<img src="img/CUÑA DE CIGUEÑAL VOLANTE.jpg" alt="CUÑA DE CIGUEÑAL / VOLANTE" />
+							</a>
+							<span class="discount">-13%</span>
+						
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>
+								<a href="cuna-de-ciguenal-volante.html">CUÑA DE CIGUEÑAL / VOLANTE</a>
+							</h3>
+							<span class="add-cart" data-item-id="item9">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+						</div>
+					</div>
+
+					<!-- Producto 3 -->
+					<div class="card-product">
+						<div class="container-img">
+							<a href="pedal-de-freno.html">
+								<img src="img/Pedal de freno.jpg" alt="PEDAL DE FRENO" />
+							</a>
+							<span class="discount">-13%</span>
+						
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>
+								<a href="pedal-de-freno.html">PEDAL DE FRENO</a>
+							</h3>
+							<span class="add-cart" data-item-id="item15">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+						</div>
+					</div>
+
+                     <!-- Productos 4 -->
+                    <div class="card-product">
+						<div class="container-img">
+							<a href="manetas-de-freno.html">
+								<img src="img/MANETAS DE FRENO.jpg" alt="MANETAS DE FRENO" />
+							</a>
+							<span class="discount">-13%</span>
+							
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>
+								<a href="manetas-de-freno.html">MANETAS DE FRENO</a>
+							</h3>
+							<span class="add-cart" data-item-id="item14">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+						</div>
+					</div>
+                </div>
+            </section>
+
+			<script>
+				// Función para obtener ítems mostrados desde localStorage
+				function getShownItems() {
+					const shownItems = localStorage.getItem('shownItems');
+					return shownItems ? JSON.parse(shownItems) : [];
+				}
+			
+				// Función para guardar ítems mostrados en localStorage
+				function saveShownItems(items) {
+					localStorage.setItem('shownItems', JSON.stringify(items));
+				}
+			
+				// Obtener ítems mostrados desde localStorage
+				let shownItems = getShownItems();
+			
+				// Función para manejar clic en ícono add-cart
+				function handleAddCartClick(itemId) {
+					// Verificar si el ítem ya está mostrado
+					if (!shownItems.includes(itemId)) {
+						shownItems.push(itemId);
+						saveShownItems(shownItems);
+					}
+				}
+			
+				// Obtener todos los íconos con clase add-cart
+				const icons = document.querySelectorAll('.add-cart');
+			
+				// Agregar un event listener a cada ícono
+				icons.forEach((icon) => {
+					const itemId = icon.getAttribute('data-item-id');
+					icon.addEventListener('click', () => {
+						handleAddCartClick(itemId);
+						// Redirigir a la página del carrito
+						// window.location.href = 'Carrito.html';
+					});
+				});
+			</script>			
+			
+
+			<!----------------------------------------->
+			<script>
+
+				// Obtener todos los contenedores de productos
+				const containers = document.querySelectorAll('.container-products');
+			
+				// Iterar sobre cada contenedor
+				containers.forEach(function(container) {
+					// Obtener todos los botones 'add-cart' dentro del contenedor actual
+					const addCartButtons = container.querySelectorAll('.add-cart');
+			
+					// Agregar un manejador de evento para cada botón de 'add-cart' dentro del contenedor actual
+					addCartButtons.forEach(function(button) {
+						button.addEventListener('click', function() {
+							alert('¡Producto añadido al carrito!');
+						});
+					});
+				});
+			</script>
+            
+
+
+
+             <!-------------------------------->
+
+            <footer class="footer">
+                <div class="container container-footer">
+                    <div class="menu-footer">
+                        <div class="contact-info">
+                            <p class="title-footer">Información de Contacto</p>
+                            <ul>
+                                <li>
+                                    Dirección: Zona N°8
+                                    Colegio Bella Cruz 4C
+                                    Oeste. 1C Norte. 20VRS
+                                    Este.
+                                    Municipio de Ciudad
+                                    Sandino
+                                </li>
+                                <li>Teléfono: +505 7618 0471</li>
+                                <li>Facebook: Repuestos Aleluya</li>
+                            </ul>
+                            <div class="social-icons">
+								<a href="https://www.facebook.com/profile.php?id=100005398874888&mibextid=ZbWKwL" target="_blank" class="facebook">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							
+								<a href="https://www.instagram.com/hkatherinetatiana?igsh=NXlyenFsM3VrbW1y" target="_blank" class="instagram">
+									<i class="fab fa-instagram"></i>
+								</a>
+							</div>
+                        </div>
+    
+                        <div class="information">
+							<p class="title-footer">Información</p>
+							<ul>
+								<li><a href="nosotros.html">Acerca de Nosotros</a></li>
+								<li><a href="contactos.html">Contactános</a></li>
+							</ul>
+						</div>
+	
+						<div class="my-account">
+							<p class="title-footer">Mi cuenta</p>
+	
+							<ul>
+								<li><a href="dashboard.html">Mi cuenta</a></li>
+							</ul>
+						</div>
+	
+						<div class="newsletter">
+							<p class="title-footer">Consultas</p>
+							<ul>
+								<li><a href="https://wa.me/50576180471?text=Hola,%20estoy%20interesado%20en%20sus%20productos." target="_blank">Consulta nuestros productos ahora.</a></li>
+							</ul>
+						</div>
+                    </div>
+    
+                    <div class="copyright">
+                        <p>
+                            Desarrollado por Repuestos Aleluya &copy; 2024
+                        </p>
+    
+                        
+                    </div>
+                </div>
+            </footer>    
+
+            
+        <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			// Tu código JavaScript aquí
+			const searchInput = document.getElementById('searchInput');
+			const searchResults = document.getElementById('searchResults');
+			const productNames = [
+				"LLANTA 4.00-8 NAYASA",
+				"LLANTAS 4.00-8 MRF",
+				"REPSOL MINERAL",
+				"LIQUIDO DE FRENO ROJO",
+				"ACEITE PUMA 20W50 4T",
+				"ACEITE CASTROL 20W50 4T",
+				"ACEITE ELF 20W50 4T",
+				"ACEITE MOBIL 20W50 4T",
+				"CUNA DE CIGUENAL VOLANTE",
+				"BUSHING AMORTIGUADOR TRASERO",
+				"BUSHING DELANTERO",
+				"KITS DE REPARACION DE CILINDRO MAESTRO",
+				"BUSHING DE MULETA",
+				"MANETAS DE FRENO",
+				"PEDAL DE FRENO",
+				"SUSPENSION",
+				"LLANTA EUOGRIP",
+				"LLANTA TVS"
+			];
+		
+			// Función para mostrar resultados filtrados
+			function showResults(results) {
+				// Limpiar resultados anteriores
+				searchResults.innerHTML = '';
+				
+				// Mostrar resultados actuales
+				results.forEach(result => {
+					const link = document.createElement('a');
+					link.href = `${result.replace(/\s+/g, '-').toLowerCase()}.html`; // Ejemplo de enlace al detalle del producto
+					link.textContent = result;
+					searchResults.appendChild(link);
+				});
+		
+				// Mostrar el menú de resultados
+				searchResults.classList.add('show');
+			}
+		
+			// Evento de entrada en el campo de búsqueda
+			searchInput.addEventListener('input', function() {
+				const searchString = searchInput.value.trim().toLowerCase();
+				const filteredProducts = productNames.filter(product => {
+					return product.toLowerCase().includes(searchString);
+				});
+				
+				if (searchString.length === 0) {
+					searchResults.classList.remove('show'); // Ocultar resultados si no hay búsqueda
+				} else {
+					showResults(filteredProducts); // Mostrar resultados filtrados
+				}
+			});
+		
+			// Evento para cerrar el menú de resultados al hacer clic fuera de él
+			document.addEventListener('click', function(event) {
+				const isClickInside = searchResults.contains(event.target) || searchInput.contains(event.target);
+				if (!isClickInside) {
+					searchResults.classList.remove('show');
+				}
+			});
+		</script>
+
+    </body>
+</html>

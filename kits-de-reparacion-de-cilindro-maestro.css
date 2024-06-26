@@ -1,0 +1,874 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+	--primary-color: hsl(224, 54%, 36%);
+	--background-color: #f9f5f0;
+	--dark-color: #151515;
+}
+
+html {
+	font-size: 64.5%;
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* ********************************** */
+/*             UTILIDADES             */
+/* ********************************** */
+.container {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.heading-1 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 3rem;
+}
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+.container-hero {
+	background-color: var(--background-color);
+}
+
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+
+.container-logo {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+
+.container-logo i {
+	font-size: 3rem;
+}
+
+.container-logo h1 a {
+	text-decoration: none;
+	color: #000000;
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+/* ************* ICONOS ************* */
+.container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.container-user .fa-user {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+    position: relative;
+}
+
+.container-user .fa-cart-shopping {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+}
+
+.content-shopping-cart {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.user-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    min-width: 150px;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #000
+}
+
+.user-icon:hover .dropdown-menu {
+    display: block;
+}
+
+/* Opcional: Para un menú que se abre al hacer clic */
+.user-icon .fa-user {
+    cursor: pointer;
+}
+
+/* ************* NAVBAR ************* */
+.container-navbar {
+	background-color: var(--primary-color);
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+	display: none;
+}
+
+.menu {
+	display: flex;
+	gap: 2rem;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu a {
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.menu a::after {
+	content: '';
+	width: 3rem;
+	height: 2px;
+	background-color: #fff;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+.menu a:hover {
+	color: #000000;
+}
+
+.search-container {
+    position: relative;
+    
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
+    margin-right: 1rem; /* Ajuste de margen derecho */
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 40rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.search-form input::-webkit-search-cancel-button {
+    appearance: none;
+}
+
+.btn-search {
+    border: none;
+    background-color: var(--primary-color); /* Cambiar al color deseado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn-search i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Estilos del menú de resultados */
+.search-results {
+    position: absolute;
+    top: calc(100% + 0.5rem); /* Alinea el menú debajo del input */
+    left: 0;
+    width: calc(100% - 4rem); /* Ajustar según el ancho deseado */
+    background-color: var(--primary-color);
+    border: 1px solid #ddd;
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Inicialmente oculto */
+    z-index: 1001; /* Asegura que esté por encima del contenido */
+	font-family: 'Poppins', sans-serif; 
+}
+
+.search-results a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+	font-size: 1.2rem;
+}
+
+.search-results a:hover {
+    background-color: #000;
+}
+
+.search-results.show {
+    display: block; /* Mostrar cuando hay resultados */
+}
+
+
+/* **********************************************************************/
+
+
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.gallery__image-container {
+  height: 300px;
+  width: 100%;
+  background-image: url("img/KITS\ DE\ REPARACION.jpg");
+  background-position-y: -35px;
+  background-size: cover;
+  cursor: default;
+}
+
+
+/* Galeria que ya no esta pero que deje para que 
+la imagen principal quede centrica */
+@media (min-width: 1115px) {
+  .gallery {
+    width: 446px;
+    cursor: default;
+  }
+  .gallery__image-container {
+    background-position-y: 0;
+    border-radius: 16px;
+    height: 446px;
+    margin-bottom: 32px;
+  }
+}
+
+
+h2.details__title {
+  font-size: 40px;
+  margin-bottom: 16px;
+  cursor: default;
+}
+
+p.details__description {
+  font-size: 17px;
+  color: hsl(219, 13%, 29%);
+  line-height: 30px;
+  margin-bottom: 20px;
+  cursor: default;
+}
+
+.details__prices  {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  align-items: center;
+  cursor: default;
+}
+.details__now {
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: default;
+}
+.details__discount {
+  font-size: 20px;
+  background-color: hsl(25deg, 100%, 94%);
+  color: hsl(224, 54%, 36%);
+  padding: 4px;
+  border: 4px;
+}
+.details__before {
+  font-weight: 700;
+  color: hsl(219deg, 9%, 45%);
+  text-decoration: line-through;
+  font-size: 20px;
+}
+.details__product-quantity a.details__button {
+  background-color: hsl(224, 54%, 36%);
+  width: 100%;
+  height: 57px;
+  border-radius: 8px;
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  font-size: 17px;
+  font-weight: 500;  /* Grosor de negrita en una palabra */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-decoration: none;
+}
+.details__button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+
+@media (min-width: 1115px) {
+  .details {
+    width: 446px;
+    padding-top: 60px;
+  }
+  
+  .details__prices {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+}
+  .content {
+    display: flex;
+    padding: 50px 150px;
+    gap: 124px;
+  }
+
+  /* ********************************** */
+/*       MEDIA QUERIES -- 768px       */
+/* ********************************** */
+@media (max-width: 768px) {
+  
+  body {
+    font-family: "Kumbh Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor de la imagen principal */
+  .gallery__image-container {
+    height: 30vh; /* Ajuste basado en la altura de la ventana */
+    width: 100%;
+    background-image: url("img/KITS\ DE\ REPARACION.jpg");
+    background-position: center;
+    background-size: contain; /* Ajusta para ver la imagen completa */
+    background-repeat: no-repeat;
+    cursor: default;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Títulos y descripciones */
+  h2.details__title {
+    font-size: 3rem; /* Tamaño aumentado */
+    margin-bottom: 16px;
+    cursor: default;
+  }
+  
+  p.details__description {
+    font-size: 1.7rem; /* Tamaño aumentado */
+    color: hsl(219, 13%, 29%);
+    line-height: 1.8; /* Proporción relativa para la altura de línea */
+    margin-bottom: 20px;
+    cursor: default;
+  }
+  
+  /* Precios y descuentos */
+  .details__prices {
+    display: flex;
+    flex-direction: column; /* Columna por defecto para móviles */
+    margin-bottom: 24px;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: default;
+  }
+  
+  .details__now {
+    font-size: 2.5rem; /* Tamaño aumentado */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: default;
+  }
+  
+  .details__discount {
+    font-size: 2rem; /* Tamaño aumentado */
+    background-color: hsl(25deg, 100%, 94%);
+    color: hsl(224, 54%, 36%);
+    padding: 4px;
+    border: 4px;
+  }
+  
+  .details__before {
+    font-weight: 700;
+    color: hsl(219deg, 9%, 45%);
+    text-decoration: line-through;
+    font-size: 2rem; /* Tamaño aumentado */
+  }
+  
+  /* Botón de cantidad de producto */
+  .details__product-quantity a.details__button {
+    background-color: hsl(224, 54%, 36%);
+    width: 100%;
+    height: 57px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 1.5rem; /* Tamaño aumentado */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-decoration: none;
+  }
+  
+  .details__button:hover {
+    cursor: pointer;
+    opacity: 0.8; /* Más visible en el hover */
+  }
+  
+  /* Contenido de la página */
+  .content {
+    display: flex;
+    flex-direction: column; /* Columna por defecto */
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Media queries para diferentes tamaños de pantalla */
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+      padding: 50px;
+      gap: 50px;
+    }
+  
+    .gallery__image-container {
+      height: 40vh; /* Aumenta la altura en tabletas */
+    }
+  
+    .details__prices {
+      flex-direction: row; /* Fila en pantallas más grandes */
+      align-items: center;
+    }
+  }
+  
+  @media (min-width: 1115px) {
+    .content {
+      padding: 50px 150px;
+      gap: 124px;
+    }
+  
+    .gallery {
+      width: 446px;
+      cursor: default;
+    }
+  
+    .gallery__image-container {
+      height: 446px;
+      margin-bottom: 32px;
+    }
+  
+    .details {
+      width: 446px;
+      padding-top: 60px;
+    }
+  }
+  
+
+	html {
+		font-size: 55%;
+	}
+
+	.hero {
+		padding: 2rem;
+	}
+
+	.customer-support {
+		display: none;
+	}
+
+	/*.content-shopping-cart {
+		display: none;
+	}*/
+
+	.navbar {
+		padding: 1rem 2rem;
+	}
+
+	.navbar .fa-bars {
+		display: block;
+		color: #fff;
+		font-size: 3rem;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.content-banner {
+		max-width: 50rem;
+		margin: 0 auto;
+		padding: 25rem 0;
+	}
+
+	.container-features {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 3rem 2rem;
+	}
+
+	.card-feature {
+		padding: 2rem;
+	}
+
+	.heading-1 {
+		font-size: 2.4rem;
+	}
+
+	.card-category {
+		height: 12rem;
+	}
+
+	.card-category p {
+		font-size: 2rem;
+		text-align: center;
+		line-height: 1;
+	}
+
+	.card-category span {
+		font-size: 1.4rem;
+	}
+
+	.container-options {
+		align-items: center;
+	}
+
+	.container-options span {
+		text-align: center;
+		padding: 1rem 2rem;
+	}
+
+	.container-products {
+		grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+	}
+
+	.gallery {
+		grid-template-rows: repeat(2, 15rem);
+	}
+
+	.container-blogs {
+		overflow: hidden;
+		grid-template-columns: 1fr 1fr;
+
+		height: 52rem;
+	}
+
+	.menu-footer {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.copyright {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+	}
+}
+
+/* ********************************** */
+/*       MEDIA QUERIES -- 468px       */
+/* ********************************** */
+@media (max-width: 468px) {
+
+  body {
+    font-family: "Kumbh Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor de la imagen principal */
+  .gallery__image-container {
+    height: 30vh; /* Ajuste basado en la altura de la ventana */
+    width: 100%;
+    background-image: url("img/KITS\ DE\ REPARACION.jpg");
+    background-position: center;
+    background-size: contain; /* Ajusta para ver la imagen completa */
+    background-repeat: no-repeat;
+    cursor: default;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Títulos y descripciones */
+  h2.details__title {
+    font-size: 3rem; /* Tamaño aumentado */
+    margin-bottom: 16px;
+    cursor: default;
+  }
+  
+  p.details__description {
+    font-size: 1.7rem; /* Tamaño aumentado */
+    color: hsl(219, 13%, 29%);
+    line-height: 1.8; /* Proporción relativa para la altura de línea */
+    margin-bottom: 20px;
+    cursor: default;
+  }
+  
+  /* Precios y descuentos */
+  .details__prices {
+    display: flex;
+    flex-direction: column; /* Columna por defecto para móviles */
+    margin-bottom: 24px;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: default;
+  }
+  
+  .details__now {
+    font-size: 2.5rem; /* Tamaño aumentado */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    cursor: default;
+  }
+  
+  .details__discount {
+    font-size: 2rem; /* Tamaño aumentado */
+    background-color: hsl(25deg, 100%, 94%);
+    color: hsl(224, 54%, 36%);
+    padding: 4px;
+    border: 4px;
+  }
+  
+  .details__before {
+    font-weight: 700;
+    color: hsl(219deg, 9%, 45%);
+    text-decoration: line-through;
+    font-size: 2rem; /* Tamaño aumentado */
+  }
+  
+  /* Botón de cantidad de producto */
+  .details__product-quantity a.details__button {
+    background-color: hsl(224, 54%, 36%);
+    width: 100%;
+    height: 57px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 1.5rem; /* Tamaño aumentado */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-decoration: none;
+  }
+  
+  .details__button:hover {
+    cursor: pointer;
+    opacity: 0.8; /* Más visible en el hover */
+  }
+  
+  /* Contenido de la página */
+  .content {
+    display: flex;
+    flex-direction: column; /* Columna por defecto */
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Media queries para diferentes tamaños de pantalla */
+  @media (min-width: 768px) {
+    .content {
+      flex-direction: row;
+      padding: 50px;
+      gap: 50px;
+    }
+  
+    .gallery__image-container {
+      height: 40vh; /* Aumenta la altura en tabletas */
+    }
+  
+    .details__prices {
+      flex-direction: row; /* Fila en pantallas más grandes */
+      align-items: center;
+    }
+  }
+  
+  @media (min-width: 1115px) {
+    .content {
+      padding: 50px 150px;
+      gap: 124px;
+    }
+  
+    .gallery {
+      width: 446px;
+      cursor: default;
+    }
+  
+    .gallery__image-container {
+      height: 446px;
+      margin-bottom: 32px;
+    }
+  
+    .details {
+      width: 446px;
+      padding-top: 60px;
+    }
+  }
+  
+
+	html {
+		font-size: 42.5%;
+	}
+
+	.content-banner {
+		max-width: 50rem;
+		padding: 22rem 0;
+	}
+
+	.heading-1 {
+		font-size: 2.8rem;
+	}
+
+	.card-feature {
+		flex-direction: column;
+		border-radius: 2rem;
+	}
+
+	.feature-content {
+		align-items: center;
+	}
+
+	.feature-content p {
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	.feature-content span {
+		font-size: 1.6rem;
+		text-align: center;
+	}
+
+	.container-options span {
+		font-size: 1.8rem;
+		padding: 1rem 1.5rem;
+		font-weight: 500;
+	}
+
+	.container-products {
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		gap: 1rem;
+	}
+
+	.container-img .discount {
+		font-size: 2rem;
+	}
+
+	.content-card-product h3 {
+		font-size: 2.2rem;
+	}
+
+	.gallery {
+		grid-template-rows: repeat(2, 20rem);
+	}
+
+	.blogs {
+		padding: 2rem;
+	}
+
+	.container-blogs {
+		grid-template-columns: 1fr;
+		height: 75rem;
+	}
+
+	.content-blog h3 {
+		font-size: 2.4rem;
+	}
+
+	.content-blog span {
+		font-size: 1.8rem;
+	}
+
+	.content-blog p {
+		font-size: 2.2rem;
+	}
+
+	.btn-read-more{
+		font-size: 1.8rem;
+	}
+
+	.contact-info ul,
+	.information ul,
+	.my-account ul{
+		display: none;
+	}
+
+	.contact-info {
+		align-items: center;
+	}
+
+	.menu-footer{
+		grid-template-columns: 1fr;
+	}
+
+	.content p{
+		font-size: 1.6rem;
+	}
+}
+
+/*# sourceMappingURL=main.css.map */
